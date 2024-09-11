@@ -25,7 +25,7 @@ model denomination {
 }
 
 model transactions {
-  date          DateTime          @db.DateTime(0)
+  date          DateTime          @default(now())
   rrn           String            @id @unique(map: "rrn_UNIQUE") @db.VarChar(15)
   name          String            @db.VarChar(30)
   aadhaar       String            @db.VarChar(4)
