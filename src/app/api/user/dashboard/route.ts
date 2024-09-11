@@ -22,7 +22,7 @@ export async function POST(request: Request) {
         type: 'withdraw',
         date: {
           gte: new Date(currentDate),
-          lte: new Date(currentDate.getTime() + 24 * 60 * 60 * 1000),
+          lt: new Date(currentDate.getTime() + 24 * 60 * 60 * 1000),
         },
       },
       _sum: {
@@ -35,7 +35,7 @@ export async function POST(request: Request) {
         type: 'withdraw',
         date: {
           gte: new Date(previousDate),
-          lte: new Date(previousDate.getTime() + 24 * 60 * 60 * 1000),
+          lt: new Date(previousDate.getTime() + 24 * 60 * 60 * 1000),
         },
       },
       _sum: {
@@ -48,7 +48,7 @@ export async function POST(request: Request) {
         type: 'deposit',
         date: {
           gte: new Date(currentDate),
-          lte: new Date(currentDate.getTime() + 24 * 60 * 60 * 1000),
+          lt: new Date(currentDate.getTime() + 24 * 60 * 60 * 1000),
         },
       },
       _sum: {
@@ -61,7 +61,7 @@ export async function POST(request: Request) {
         type: 'deposit',
         date: {
           gte: new Date(previousDate),
-          lte: new Date(previousDate.getTime() + 24 * 60 * 60 * 1000),
+          lt: new Date(previousDate.getTime() + 24 * 60 * 60 * 1000),
         },
       },
       _sum: {
@@ -74,7 +74,7 @@ export async function POST(request: Request) {
         type: 'transfer',
         date: {
           gte: new Date(currentDate),
-          lte: new Date(currentDate.getTime() + 24 * 60 * 60 * 1000),
+          lt: new Date(currentDate.getTime() + 24 * 60 * 60 * 1000),
         },
       },
       _sum: {
@@ -87,7 +87,7 @@ export async function POST(request: Request) {
         type: 'transfer',
         date: {
           gte: new Date(previousDate),
-          lte: new Date(previousDate.getTime() + 24 * 60 * 60 * 1000),
+          lt: new Date(previousDate.getTime() + 24 * 60 * 60 * 1000),
         },
       },
       _sum: {
@@ -101,7 +101,7 @@ export async function POST(request: Request) {
         type: 'withdraw',
         date: {
           gte: new Date(currentDate),
-          lte: new Date(currentDate.getTime() + 24 * 60 * 60 * 1000),
+          lt: new Date(currentDate.getTime() + 24 * 60 * 60 * 1000),
         },
       },
     });
@@ -112,7 +112,7 @@ export async function POST(request: Request) {
         type: 'deposit',
         date: {
           gte: new Date(currentDate),
-          lte: new Date(currentDate.getTime() + 24 * 60 * 60 * 1000),
+          lt: new Date(currentDate.getTime() + 24 * 60 * 60 * 1000),
         },
       },
     });
@@ -123,7 +123,7 @@ export async function POST(request: Request) {
         type: 'transfer',
         date: {
           gte: new Date(currentDate),
-          lte: new Date(currentDate.getTime() + 24 * 60 * 60 * 1000),
+          lt: new Date(currentDate.getTime() + 24 * 60 * 60 * 1000),
         },
       },
     });
