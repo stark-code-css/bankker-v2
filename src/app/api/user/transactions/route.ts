@@ -27,11 +27,12 @@ export async function POST(request: Request) {
       success: false,
       message: 'Error fetching transactions',
       error: error.message,
+      data: {},
     } as ApiResponse);
   }
 }
 
-export async function DELETE(request: Request, context: any) {
+export async function DELETE(request: Request) {
   try {
     const { rrn } = await request.json();
     const session = await auth();
@@ -63,11 +64,12 @@ export async function DELETE(request: Request, context: any) {
       success: false,
       message: 'Error deleting transaction',
       error: error.message,
+      data: {},
     } as ApiResponse);
   }
 }
 
-export async function PUT(request: Request, context: any) {
+export async function PUT(request: Request) {
   try {
     const { rrn, data } = await request.json();
     const session = await auth();
@@ -106,6 +108,7 @@ export async function PUT(request: Request, context: any) {
       success: false,
       message: 'Error updating transaction',
       error: error.message,
+      data: {},
     } as ApiResponse);
   }
 }

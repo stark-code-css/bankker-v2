@@ -37,6 +37,7 @@ export async function POST(request: Request) {
       success: false,
       message: 'Error saving denomination',
       error: error.message,
+      data: {},
     } as ApiResponse);
   }
 }
@@ -67,6 +68,7 @@ export async function DELETE(request: Request) {
       success: false,
       message: 'Error deleting denomination',
       error: error.message,
+      data: {},
     } as ApiResponse);
   }
 }

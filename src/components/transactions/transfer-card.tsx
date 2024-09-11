@@ -130,7 +130,9 @@ const TransferCard = () => {
             />
           </div>
           <div>
-            <Label htmlFor="creditAadhaar">Creditor's Aadhaar Number</Label>
+            <Label htmlFor="creditAadhaar">
+              Creditor&apos;s Aadhaar Number
+            </Label>
             <Input
               id="creditAadhaar"
               type="text"

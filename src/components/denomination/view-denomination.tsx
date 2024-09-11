@@ -13,14 +13,12 @@ import { Button } from '../ui/button';
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from '../ui/table';
 import { toast } from '@/hooks/use-toast';
-import { Separator } from '../ui/separator';
 
 const ViewDenomination = () => {
   const [data, setData] = React.useState({

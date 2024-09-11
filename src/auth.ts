@@ -1,7 +1,7 @@
 import NextAuth from 'next-auth';
 import credentials from 'next-auth/providers/credentials';
 import prisma from './lib/db';
-import { comparePassword, hashPassword } from './lib/hashPassword';
+import { comparePassword } from './lib/hashPassword';
 
 const getUserFromDb = async (email: unknown, password: unknown) => {
   try {
@@ -33,7 +33,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
       authorize: async (credentials) => {
         try {
-          let user = await getUserFromDb(
+          const user = await getUserFromDb(
             credentials.email,
             credentials.password
           );

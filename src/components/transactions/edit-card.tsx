@@ -30,7 +30,7 @@ const EditCard = () => {
 
   const rrn = usePathname().split('/').pop();
   useEffect(() => {
-    async function fetchData(rrn: string) {
+    async function fetchData() {
       try {
         const response = await fetch('/api/user/transactions', {
           method: 'POST',
@@ -57,7 +57,7 @@ const EditCard = () => {
         console.log(error);
       }
     }
-    fetchData(rrn || '');
+    fetchData();
   }, []);
 
   const handleChange = (e: any) => {

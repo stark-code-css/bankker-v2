@@ -18,6 +18,7 @@ export async function userAddAction(formData: FormData) {
       role,
     },
   });
+  return res;
 }
 
 export async function userUpdateAction(formData: FormData) {
@@ -37,4 +38,5 @@ export async function userUpdateAction(formData: FormData) {
       role,
     },
   });
+  return res;
 }

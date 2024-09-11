@@ -34,6 +34,7 @@ export async function POST(request: Request) {
     return NextResponse.json({
       success: false,
       message: 'Error fetching transactions',
+      data: [],
       error: error.message,
     } as ApiResponse);
   }
