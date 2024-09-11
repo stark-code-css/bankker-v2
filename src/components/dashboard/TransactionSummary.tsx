@@ -29,7 +29,7 @@ const TransactionSummary = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const response = await fetch(`http://localhost:3000/api/user/dashboard`, {
+      const response = await fetch(`/api/user/dashboard`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

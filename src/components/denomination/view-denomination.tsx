@@ -43,16 +43,13 @@ const ViewDenomination = () => {
   const handleSearch = async (e: any) => {
     e.preventDefault();
     try {
-      const response = await fetch(
-        'http://localhost:3000/api/user/denominations/search',
-        {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ date }),
-        }
-      );
+      const response = await fetch('/api/user/denominations/search', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ date }),
+      });
       const result = await response.json();
       if (!result.success) {
         throw new Error(result.error);
@@ -106,16 +103,13 @@ const ViewDenomination = () => {
       if (!confirmation) {
         throw new Error('Deletion cancelled!');
       }
-      const response = await fetch(
-        'http://localhost:3000/api/user/denominations',
-        {
-          method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ date }),
-        }
-      );
+      const response = await fetch('/api/user/denominations', {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ date }),
+      });
       const result = await response.json();
       if (!result.success) {
         throw new Error(result.error);
