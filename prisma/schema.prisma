@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model denomination {
+  date        DateTime
+  fiveHundred Int?     @default(0)
+  twoHundred  Int?     @default(0)
+  oneHundred  Int?     @default(0)
+  fifty       Int?     @default(0)
+  twenty      Int?     @default(0)
+  ten         Int?     @default(0)
+  bankOne     Int?     @default(0)
+  bankTwo     Int?     @default(0)
+  bankThree   Int?     @default(0)
+  others      Int?     @default(0)
+  user        String   @db.VarChar(32)
+
+  @@id([date, user])
+}
+
+model transactions {
+  date          DateTime          @db.DateTime(0)
+  rrn           String            @id @unique(map: "rrn_UNIQUE") @db.VarChar(15)
+  name          String            @db.VarChar(30)
+  aadhaar       String            @db.VarChar(4)
+  amount        Int
+  type          transactions_type
+  creditName    String?           @db.VarChar(30)
+  creditAadhaar String?           @db.VarChar(4)
+  user          String            @db.VarChar(32)
+}
+
+model users {
+  name     String     @db.VarChar(32)
+  email    String     @id @unique(map: "email_UNIQUE") @db.VarChar(32)
+  password String     @db.VarChar(64)
+  role     users_role
+}
+
+enum users_role {
+  user
+  admin
+}
+
+enum transactions_type {
+  deposit
+  withdraw
+  transfer
+}
