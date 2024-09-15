@@ -97,8 +97,8 @@ const TransactionSummary = () => {
         <div className="col-span-1">
           <TransactionCard
             title="Total Transfers"
-            todayAmount={data.transactionSum}
-            yesterdayAmount={data.previousTransactionSum}
+            todayAmount={data.transferSum}
+            yesterdayAmount={data.previousTransferSum}
             todayCount={data.transferCount}
             Icon={MdCurrencyExchange}
           />
